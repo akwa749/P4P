@@ -1,6 +1,8 @@
 import open3d as o3d
 import numpy as np
 
+#testing git
+
 # # Read the point cloud file
 # with open("C:/Users/Anthony/Documents/Research Project/testing point clouds/P001 2022-01-25 01_39_54.ply", 'r') as file:
 #     pcd = o3d.io.read_point_cloud(file)
