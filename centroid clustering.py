@@ -12,13 +12,30 @@ point_cloud = np.asarray(pcd.points)
 # Compute the centroid of the point cloud data (assuming the human model is near the center of the point cloud)
 centroid = np.mean(point_cloud, axis=0)
 
+### this section for three clusters ###
+
+
+# # Cluster the points into two groups using k-means clustering
+# kmeans = KMeans(n_clusters=3, init=np.array([centroid, 0.7*np.min(point_cloud, axis=0), 0.7*np.max(point_cloud, axis = 0)]), n_init=3)
+# labels = kmeans.fit_predict(point_cloud)
+
+# # Separate the points corresponding to the human model and the background based on the cluster labels
+# human_points = point_cloud[labels == 2]
+# background_points = point_cloud[labels == 1]
+
+
+
+### this section is working with two clusters so choose one or the other and comment the other ###
+
 # Cluster the points into two groups using k-means clustering
-kmeans = KMeans(n_clusters=3, init=np.array([centroid, 0.7*np.min(point_cloud, axis=0), 0.7*np.max(point_cloud, axis = 0)]), n_init=3)
+kmeans = KMeans(n_clusters=2, init=np.array([centroid, 0.7*np.min(point_cloud, axis=0)]), n_init=2)
 labels = kmeans.fit_predict(point_cloud)
 
 # Separate the points corresponding to the human model and the background based on the cluster labels
-human_points = point_cloud[labels == 2]
+human_points = point_cloud[labels == 0]
 background_points = point_cloud[labels == 1]
+
+###################
 
 print(pcd)
 print(human_points)
