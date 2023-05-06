@@ -28,12 +28,23 @@ centroid = np.mean(point_cloud, axis=0)
 ### this section is working with two clusters so choose one or the other and comment the other ###
 
 # Cluster the points into two groups using k-means clustering
-kmeans = KMeans(n_clusters=2, init=np.array([centroid, 0.7*np.min(point_cloud, axis=0)]), n_init=2)
+# kmeans = KMeans(n_clusters=2, init=np.array([centroid, (0.7*(np.min(point_cloud, axis=0) + np.max(point_cloud,axis = 0)))/2]), n_init=2)
+# labels = kmeans.fit_predict(point_cloud)
+
+# # Separate the points corresponding to the human model and the background based on the cluster labels
+# human_points = point_cloud[labels == 1]
+# background_points = point_cloud[labels == 0]
+
+## using kmeans initialisation instead so no centroid
+
+kmeans = KMeans(n_clusters=2, init='k-means++', n_init=10)
 labels = kmeans.fit_predict(point_cloud)
 
 # Separate the points corresponding to the human model and the background based on the cluster labels
-human_points = point_cloud[labels == 0]
-background_points = point_cloud[labels == 1]
+human_points = point_cloud[labels == 1]
+background_points = point_cloud[labels == 0]
+
+
 
 ###################
 
