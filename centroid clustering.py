@@ -1,6 +1,6 @@
 import open3d as o3d
 import numpy as np
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, DBSCAN
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
@@ -27,34 +27,45 @@ centroid = np.mean(point_cloud, axis=0)
 
 ### this section is working with two clusters so choose one or the other and comment the other ###
 
-# Cluster the points into two groups using k-means clustering
-# kmeans = KMeans(n_clusters=2, init=np.array([centroid, (0.7*(np.min(point_cloud, axis=0) + np.max(point_cloud,axis = 0)))/2]), n_init=2)
-# labels = kmeans.fit_predict(point_cloud)
-
-# # Separate the points corresponding to the human model and the background based on the cluster labels
-# human_points = point_cloud[labels == 1]
-# background_points = point_cloud[labels == 0]
-
-## using kmeans initialisation instead so no centroid
-
-kmeans = KMeans(n_clusters=2, init='k-means++', n_init=10)
+#Cluster the points into two groups using k-means clustering
+kmeans = KMeans(n_clusters=2, init=np.array([centroid, (0.7*(np.min(point_cloud, axis=0) + np.max(point_cloud,axis = 0)))/2]), n_init=2)
 labels = kmeans.fit_predict(point_cloud)
 
 # Separate the points corresponding to the human model and the background based on the cluster labels
 human_points = point_cloud[labels == 1]
 background_points = point_cloud[labels == 0]
 
+## using kmeans initialisation instead so no centroid
 
+# kmeans = KMeans(n_clusters=2, init='k-means++', n_init=10)
+# labels = kmeans.fit_predict(point_cloud)
+
+# # Separate the points corresponding to the human model and the background based on the cluster labels
+# human_points = point_cloud[labels == 1]
+# background_points = point_cloud[labels == 0]
+
+##############
+
+### using dbscan to try it
+
+# dbscan = DBSCAN(eps = 0.01, min_samples = 100)
+# human_points = dbscan.fit_predict(point_cloud)
 
 ###################
 
 print(pcd)
 print(human_points)
 
+### part for dbscan ###
 
+#human_points = point_cloud[human_points != -1]
+
+###
 visualized_point_cloud = o3d.geometry.PointCloud()
 visualized_point_cloud.points = o3d.utility.Vector3dVector(human_points)
 o3d.visualization.draw_geometries([visualized_point_cloud])
+
+print("done")
 
 # fig = plt.figure()
 # ax = fig.add_subplot(111, projection='3d')
