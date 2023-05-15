@@ -28,3 +28,8 @@ labels = kmeans.fit_predict(filtered_point_cloud)
 --update from 11/05/2023
 Becareful of using DBscan computatively expensive will crash computer, tried using lower epislon value and higher
 sample size as that makes it compute faster but doesn't work maybe need to debug?
+
+
+--update from 15/05/2023
+scrap DBSCAN fucks computer over useless.
+Goal should be remove far away points which the boundingbox method.py does and then most importantly remove the floor from that potentially using clustering or techniques in that same file i was exploring. And ideally also find a way to mathematically caculate the padding we use for it to be fully automatic but that can be next week problem or something
