@@ -1,4 +1,16 @@
-# P4P
+# Part IV Project: 3D Human Motion Capture
+
+## Setup
+**Step 1: (Optional)**  If you don't want to mess up your existing setup, consider creating a conda environment.
+```
+conda create -n motionCapture
+conda activate motionCapture
+```
+
+**Step 2: (Required)**
+```
+pip install -r requirements.txt
+```
 
 centroid cluster.py
 is the file that is currently working
