@@ -12,6 +12,14 @@ conda activate motionCapture
 pip install -r requirements.txt
 ```
 
+## Errors: SSL Error 
+copy the following files from CONDA_PATH\Library\bin to CONDA_PATH\DLLs
+```
+libcrypto-1_1-x64.*
+libssl-1_1-x64.*
+```
+---
+
 centroid cluster.py
 is the file that is currently working
 

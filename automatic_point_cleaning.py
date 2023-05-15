@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 
-pcd = o3d.io.read_point_cloud('P001 2022-01-25 01_39_54.ply')
+pcd = o3d.io.read_point_cloud('./data/P001 2022-01-25 01_39_54.ply')
 points = np.asarray(pcd.points)
 
 #getting max and minimum points from the point cloud data
