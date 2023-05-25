@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
-pcd = o3d.io.read_point_cloud('P001 2022-01-25 01_39_54.ply')
+pcd = o3d.io.read_point_cloud('./data/P001 2022-01-25 01_39_54.ply')
 point_cloud = np.asarray(pcd.points)
 
 # Compute the centroid of the point cloud data (assuming the human model is near the center of the point cloud)

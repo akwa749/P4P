@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.neighbors import NearestNeighbors
 
 
-pcd = o3d.io.read_point_cloud('P001 2022-01-25 01_39_54.ply')
+pcd = o3d.io.read_point_cloud('./data/P001 2022-01-25 01_39_54.ply')
 point_cloud = np.asarray(pcd.points)
 
 def bounding_box():
