@@ -5,10 +5,16 @@
 git clone https://github.com/akwa749/P4P
 ```
 
-**Step 2: (Required)** Creates conda environment with required dependencies and versioning
+**Step 2: (Required)** Creates (new) conda environment with required dependencies and versioning
 ```
 conda env create -f env.yml
 ```
+
+**Optional**: If you want to use an existing conda environment, update it with the required dependencies and versioning
+```
+conda env update --name [myenv] --file [local.yml] --prune
+```
+Note: `--prune` removes all other packages that is **NOT** in `[local.yml]`
 
 Additional commands to help:
 ```
