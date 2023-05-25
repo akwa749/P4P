@@ -76,3 +76,7 @@ sample size as that makes it compute faster but doesn't work maybe need to debug
 --update from 15/05/2023
 scrap DBSCAN fucks computer over useless.
 Goal should be remove far away points which the boundingbox method.py does and then most importantly remove the floor from that potentially using clustering or techniques in that same file i was exploring. And ideally also find a way to mathematically caculate the padding we use for it to be fully automatic but that can be next week problem or something
+
+--update from 25/05/2023
+code struggling to generalise to new data and clean effectively / accurately
+might need to consider new methods for cleaning or finding ways to fine tune hyperparameters
