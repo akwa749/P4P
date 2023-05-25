@@ -1,20 +1,42 @@
 # Part IV Project: 3D Human Motion Capture
-## Setup
-**Step 1:** Git clone repo
-```
+<!-- ## Tech Stack -->
+
+Using Python, Open3D, PyTorch, PyTorch3D
+
+## Run Locally
+
+Clone the project
+
+```bash
 git clone https://github.com/akwa749/P4P
 ```
 
-**Step 2: (Required)** Creates (new) conda environment with required dependencies and versioning
+Go to the project directory
+```bash
+  cd my-project
 ```
+
+Install dependencies
+```bash
+pip install open3d
+```
+
+Or alternatively,
+creating (new) conda environment with required dependencies and versioning
+```bash
 conda env create -f env.yml
 ```
 
 **Optional**: If you want to use an existing conda environment, update it with the required dependencies and versioning
-```
+```bash
 conda env update --name [myenv] --file [local.yml] --prune
 ```
-Note: `--prune` removes all other packages that is **NOT** in `[local.yml]`
+Note: `--prune` removes all other packages locally that is **NOT** in `[local.yml]`
+
+
+
+
+
 
 Additional commands to help:
 ```
@@ -43,7 +65,7 @@ libssl-1_1-x64.*
 --- -->
 
 ---
-centroid cluster.py
+<!-- centroid cluster.py
 is the file that is currently working
 
 ## notes 6/05/2023  
@@ -79,4 +101,4 @@ Goal should be remove far away points which the boundingbox method.py does and t
 
 --update from 25/05/2023
 code struggling to generalise to new data and clean effectively / accurately
-might need to consider new methods for cleaning or finding ways to fine tune hyperparameters
+might need to consider new methods for cleaning or finding ways to fine tune hyperparameters -->
