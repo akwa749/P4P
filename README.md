@@ -1,25 +1,48 @@
 # Part IV Project: 3D Human Motion Capture
-
 ## Setup
-**Step 1: (Optional)**  If you don't want to mess up your existing setup, consider creating a conda environment.
+**Step 1:** Git clone repo
 ```
-conda create -n motionCapture
-conda activate motionCapture
-```
-
-**Step 2: (Required)**
-```
-pip install -r requirements.txt
+git clone https://github.com/akwa749/P4P
 ```
 
-## Errors: SSL Error 
+**Step 2: (Required)** Creates (new) conda environment with required dependencies and versioning
+```
+conda env create -f env.yml
+```
+
+**Optional**: If you want to use an existing conda environment, update it with the required dependencies and versioning
+```
+conda env update --name [myenv] --file [local.yml] --prune
+```
+Note: `--prune` removes all other packages that is **NOT** in `[local.yml]`
+
+Additional commands to help:
+```
+# list all the conda environment available
+conda info --envs   
+
+# list all the dependencies and versioning in current conda environment
+conda list
+
+# Create new environment named as `envname`
+conda create --name envname
+
+# Remove environment and its dependencies
+conda remove --name envname --all
+
+# Clone an existing environment
+conda create --name clone_envname --clone envname
+```
+
+<!-- ## Errors: SSL Error 
 copy the following files from CONDA_PATH\Library\bin to CONDA_PATH\DLLs
 ```
 libcrypto-1_1-x64.*
 libssl-1_1-x64.*
 ```
----
+--- -->
 
+---
 centroid cluster.py
 is the file that is currently working
 
