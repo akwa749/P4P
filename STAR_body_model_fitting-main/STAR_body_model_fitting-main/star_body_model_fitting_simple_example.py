@@ -29,7 +29,13 @@ n_points_in_pointcloud = 200000
 max_iters = 1001
 
 # Change this to reflect where the sample scans are
+
 root_folder = 'D:/STAR_body_model_fitting_data'
+
+##changing it for anthony,
+root_folder = 'C:/Users/Anthony/Documents/2023Sem1/Research Project/testing point clouds/P4P/data/P001 2022-01-25 01_39_54.ply'
+
+
 # Name of the target scan we are trying to fit with a STAR body model
 # The target point cloud can be created in cloudcompare or similar. We create it by sampling the target scan 200000x
 # It is used for calculating fitting metrics
