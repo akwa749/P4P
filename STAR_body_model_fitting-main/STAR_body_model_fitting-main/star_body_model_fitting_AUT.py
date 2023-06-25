@@ -35,7 +35,9 @@ def main():
     root_folder, data_subfolder, output_subfolder, td_scan_subfolder, lidar_subfolder, zozo_subfolder, \
         star_fitting_results_subfolder, max_iters, \
         n_points_in_pointcloud, cloud_compare_path, cloud_compare_tmp_folder = \
-        read_config_file(Path('star_body_model_fitting_AUT_sample_data.ini'))
+        read_config_file('C:/Users/Anthony/Documents/2023Sem1/Research Project/testing point clouds/P4P/STAR_body_model_fitting-main/STAR_body_model_fitting-main/star_body_model_fitting_AUT_sample_data.ini')
+    
+    #changing the line above before it was Path('star_body_model_fitting_AUT_sample_data.ini')
 
     td_scan_data_folder = Path(root_folder, data_subfolder, td_scan_subfolder)  # folder for the 3D scanner input
     lidar_data_folder = Path(root_folder, data_subfolder, lidar_subfolder)  # folder for the lidar input
@@ -329,10 +331,12 @@ def read_config_file(config_filename: Path) -> Tuple[str, str, str, str, str, st
     :param config_filename: the name of the config file
     """
 
-    if config_filename.exists():
-        print(f'Config file {config_filename} exists')
-    else:
-        print(f'Config file {config_filename} DOESN\'T exist')
+    # if config_filename.exists():
+    #     print(f'Config file {config_filename} exists')
+    # else:
+    #     print(f'Config file {config_filename} DOESN\'T exist')
+
+    config_filename = config_filename[config_filename.rfind("/")+1:]
 
     config = configobj.ConfigObj(infile=str(config_filename), raise_errors=True, unrepr=True)
 

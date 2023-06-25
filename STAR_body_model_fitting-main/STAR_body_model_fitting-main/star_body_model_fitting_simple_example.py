@@ -33,7 +33,7 @@ max_iters = 1001
 root_folder = 'D:/STAR_body_model_fitting_data'
 
 ##changing it for anthony,
-root_folder = 'C:/Users/Anthony/Documents/2023Sem1/Research Project/testing point clouds/P4P/data/P001 2022-01-25 01_39_54.ply'
+root_folder = 'C:/Users/Anthony/Documents/2023Sem1/Research Project/testing point clouds/P4P/Star_body_model_fitting_sample_data-main/Star_body_model_fitting_sample_data-main'
 
 
 # Name of the target scan we are trying to fit with a STAR body model
