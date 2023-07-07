@@ -1,25 +1,24 @@
-<p align="center">
+<!-- <p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://i.imgur.com/FxL5qM0.jpg" alt="Bot logo"></a>
-</p>
+</p> -->
 
 <h3 align="center">3D Human Model Reconstruction</h3>
 
-<div align="center">
+<!-- <div align="center"> -->
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+<!-- [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/akwa749/P4P/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/akwa749/P4P.svg)](https://github.com/akwa749/P4P/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-<!-- [![Platform](https://img.shields.io/badge/platform-reddit-orange.svg)](https://www.reddit.com/user/Wordbook_Bot) -->
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE) -->
 
-</div>
+<!-- </div> -->
 
 ---
 
-<p align="center"> 🤖 Automating 3D model reconstruction and cleaning
+<!-- <p align="center"> 🤖 Automating 3D model reconstruction and cleaning
     <br> 
-</p>
+</p> -->
 
 ## 📝 Table of Contents
 
@@ -94,11 +93,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+Follow these set of instructions in chronological order for installing PyTorch3D.
 
-```
-Give examples
-```
+https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md 
+
+Things to note:
+- For installing PyTorch, check if you have NVIDIA drivers or CUDA-enabled GPUs, select CUDA as the computing platform. Otherwise, select CPU (https://pytorch.org/get-started/locally/)  
+
 
 ### Installing
 
@@ -109,10 +110,6 @@ Clone the project
 
 ```bash
 git clone https://github.com/akwa749/P4P
-```
-
-Go to the project directory
-```bash
 cd my-project
 ```
 
@@ -132,13 +129,6 @@ conda env create -f env.yml
 conda env update --name [myenv] --file [local.yml] --prune
 ```
 Note: `--prune` removes all other packages locally that is **NOT** in `[local.yml]`
-
-<!-- ## 🚀 Deploying your own bot <a name = "deployment"></a>
-
-To see an example project on how to deploy your bot, please see my own configuration:
-
-- **Heroku**: https://github.com/kylelobo/Reddit-Bot#deploying_the_bot -->
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Python](https://www.python.org/) 
