@@ -1,24 +1,24 @@
-<!-- <p align="center">
+<p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://i.imgur.com/FxL5qM0.jpg" alt="Bot logo"></a>
-</p> -->
+</p>
 
 <h3 align="center">3D Human Model Reconstruction</h3>
 
-<!-- <div align="center"> -->
+<div align="center"> 
 
-<!-- [![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/akwa749/P4P/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/akwa749/P4P.svg)](https://github.com/akwa749/P4P/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE) -->
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-<!-- </div> -->
+</div>
 
 ---
 
-<!-- <p align="center"> 🤖 Automating 3D model reconstruction and cleaning
+<p align="center"> 🤖 Automating 3D model reconstruction and cleaning
     <br> 
-</p> -->
+</p>
 
 ## 📝 Table of Contents
 

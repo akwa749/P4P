@@ -20,10 +20,9 @@
 # Ahmed A. A. Osman
 
 import os
-path_male_star = ''
-path_female_star = ''
-path_neutral_star = ''
-
+path_male_star = '../models/male/model.npz'
+path_female_star = '../models/female/model.npz'
+path_neutral_star = '../models/neutral/model.npz'
 data_type = 'float32'
 
 if data_type not in ['float16','float32','float64']:
