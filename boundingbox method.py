@@ -35,7 +35,7 @@ def bounding_box():
     visualized_point_cloud.points = o3d.utility.Vector3dVector(human_points)
     obb = visualized_point_cloud.get_minimal_oriented_bounding_box()
     obb.color = [1,0,0]
-    # abb = visualized_point_cloud.get_oriented_bounding_box()
+    # abb = visualized_point_cloud.get_oriented_bounding_box()5
     # abb.color = [0,1,0]
     o3d.visualization.draw_geometries([obb,visualized_point_cloud])
     
