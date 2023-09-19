@@ -6,16 +6,16 @@ import open3d as o3d
 import pandas as pd
 
 
-class MyClass:
+class PreLoad:
     def rename(self, dir_path="./data"):
-        # First pass: Rename to a temporary name
+        # renames to tmp name
         for dir, subdirs, files in os.walk(dir_path):
             for i, f in enumerate(files, 1):
                 _, ext = os.path.splitext(f)
                 temp_file_name = f"temp_{str(i).zfill(3)}{ext}"
                 os.rename(os.path.join(dir, f), os.path.join(dir, temp_file_name))
 
-        # Second pass: Rename to the desired name
+        # renames to new name
         for dir, subdirs, files in os.walk(dir_path):
             for i, f in enumerate(files, 1):
                 _, ext = os.path.splitext(f)
