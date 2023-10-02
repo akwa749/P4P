@@ -7,34 +7,33 @@ import pandas as pd
 
 
 class PreLoad:
-    def rename(self, dir_path="./data"):
-        # renames to tmp name
-        for dir, subdirs, files in os.walk(dir_path):
-            for i, f in enumerate(files, 1):
-                _, ext = os.path.splitext(f)
-                temp_file_name = f"temp_{str(i).zfill(3)}{ext}"
-                os.rename(os.path.join(dir, f), os.path.join(dir, temp_file_name))
-
-        # renames to new name
-        for dir, subdirs, files in os.walk(dir_path):
-            for i, f in enumerate(files, 1):
-                _, ext = os.path.splitext(f)
-                new_file_name = f"P{str(i).zfill(3)}{ext}"
-                os.rename(os.path.join(dir, f), os.path.join(dir, new_file_name))
-
-    def load(self, path: str) -> o3d.cpu.pybind.geometry.PointCloud:
+    def rename(self, path="./data/", files=[]):
         """
-        Loads a ply file provided a valid path with robust error checking
-
-        Checks file path exists and is a ply file that is not empty
-
-        Args:
-            path: string path to a .ply file
-
-        Returns:
-            pcd: non-empty point cloud data object
+        Renames files that are not subdirectory files
         """
+        renamed_files = []
 
+        # iterate through the files that are not of the same format
+        for i, file in enumerate(os.listdir(path), 1):
+            full_path = os.path.join(path, file)
+
+            # finding only files ie. only .ply formatted files
+            for file_to_rename in files:
+                if (
+                    os.path.isfile(full_path) and file == file_to_rename
+                ):  # renaming only desired files
+                    _, ext = os.path.splitext(file)  # extract the .ply extension
+                    new_name = f"P{str(i-3).zfill(3)}{ext}"
+                    new_full_path = os.path.join(path, new_name)
+                    os.rename(full_path, new_full_path)
+                    renamed_files.append((file, new_name))
+
+        # return renamed_files
+
+    def load(self, path: str):
+        """
+        Loading in the Point Cloud Data
+        """
         # checks if file exists
         if not pathlib.Path(path).exists():
             raise FileNotFoundError("File not found.")
